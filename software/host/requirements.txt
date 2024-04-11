@@ -1,6 +1,6 @@
 cffi==1.14.0
 Click==7.0
-idna==2.9
+idna==3.7
 peewee==3.13.1
 pyasn1==0.4.8
 pycparser==2.19
