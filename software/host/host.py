@@ -145,7 +145,7 @@ def check_nfc(card_code):
             raise Exception()
 
         open_door()
-        notify_telegram(u'Дверь открыта участником №{0} ({1})'
+        notify_telegram(u'№{0} {1} открыл дверь'
                 .format(card.user_id.account_id, card.user_id.name))
 
 
@@ -187,8 +187,8 @@ def check_code(code):
             raise Exception("Code exists but expired")
         logger.error("opening door with code %s", code_str)
         open_door()
-        member_id = code.user_id.account_id if code.user_id else '---'
-        notify_telegram('Дверь открыта кодом, участник №{0} ({1})'
+        member_id = code.user_id.account_id if code.user_id else 'ДОДик'
+        notify_telegram('№{0} ({1}) открыл дверь кодом'
                 .format(member_id, code.user_id.name if code.user_id else ''))
 
     except Exception as e:
